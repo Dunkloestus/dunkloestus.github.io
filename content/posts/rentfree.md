@@ -1,11 +1,9 @@
 +++
-created: 2024-08-29T00:41
-updated: 2024-08-29T00:51
-title: Rent Free
-date: 2024-08-29T07:07:07+01:00
-draft: "false"
-share: "true"
+title = 'Rent Free'
+date = 2024-08-29T19:26:33-05:00
+draft = true
 +++
+
 
 # BackEnd Caos
 
