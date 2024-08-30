@@ -50,7 +50,7 @@ enableRobotsTXT = true
   avatarSize = ""
 
   # Description to display on homepage
-  description = "Sky above, sand below & peace within"
+  description = "Primitive wisdom for the digital age. Here I share simple solutions, online insights, and gaming thoughts."
 
   # Accent color is displayed when you hover over <a> tags
   accentColor = "#FF4D4D"
@@ -71,4 +71,4 @@ enableRobotsTXT = true
   showPostsOnHomePage = "recent"
 
   # Footer text
-  footer = "The Marauders"
+  footer = "Dunkloestus Dev"
