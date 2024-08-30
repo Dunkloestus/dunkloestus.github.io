@@ -1,6 +1,6 @@
 baseURL = 'https://dunkloestus.github.io/'
 relativeURLs = true
-title = 'Dunkloestus Digital Corner'
+title = 'Dunkloestus D.C'
 defaultContentLanguage = "en"
 languageCode = "en"
 
@@ -36,7 +36,7 @@ enableRobotsTXT = true
     
   [[menu.main]]
     identifier = "github"
-    url = "https://github.com"
+    url = "https://github.com/Dunkloestus"
     weight = 3
     
     # We use feather-icons: https://feathericons.com/
