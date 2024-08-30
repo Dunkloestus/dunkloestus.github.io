@@ -1,11 +1,7 @@
 baseURL = 'https://dunkloestus.github.io/'
-languageCode = 'en-us'
 title = 'Dunkloestus Digital Corner'
-baseURL = "http://example.org/"
 defaultContentLanguage = "en"
 languageCode = "en"
-
-title = "My New Hugo Site"
 
 theme = "gokarna"
 
