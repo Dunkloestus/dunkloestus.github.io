@@ -1,4 +1,5 @@
 baseURL = 'https://dunkloestus.github.io/'
+relativeURLs = true
 title = 'Dunkloestus Digital Corner'
 defaultContentLanguage = "en"
 languageCode = "en"
