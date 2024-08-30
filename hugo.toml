@@ -47,7 +47,7 @@ enableRobotsTXT = true
   avatarURL = "/images/mid_00548030_001.jpg"
 
   # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
-  avatarSize = ""
+  avatarSize = "size-xs"
 
   # Description to display on homepage
   description = "Primitive wisdom for the digital age. Here I share simple solutions, online insights, and gaming thoughts."
