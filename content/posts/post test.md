@@ -23,11 +23,11 @@ resto es otra prueba
 ### 3 prueba 
 dasdas
 
-![img](Pasted%20image%2020240829200133.png)
+![img](/images/Pasted%20image%2020240829200133.png)
 dasdas
-![animall crossing mercadona](images/Pasted%20image%2020240829193620.png)
+![animall crossing mercadona](/images/Pasted%20image%2020240829193620.png)
 restr
 
 
 
-![lain](images/Pasted%20image%2020240829200141.png)dasdas
+![lain](/images/Pasted%20image%2020240829200141.png)dasdas
