@@ -1,6 +1,6 @@
 ---
 created: 2024-08-29T23:35
-updated: 2024-08-29T23:46
+updated: 2024-09-03T13:25
 title: IA INDEX AI
 date: 2024-08-29T11:46:07+01:00
 draft: "false"
@@ -11,10 +11,8 @@ tags:
   - IA
   - Guias
   - tutoriales
+image: /images/Pasted%20image%2020240829233730.png
 ---
-
-
-
 
 # Index
 
