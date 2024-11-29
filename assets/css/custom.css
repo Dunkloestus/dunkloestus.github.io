@@ -1,43 +1,60 @@
-/* TOC Styles */
+/* Layout structure */
+.post-content-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+.post-main {
+    flex: 1;
+    min-width: 0; /* This prevents flex items from overflowing */
+}
+
 .post-toc {
+    width: 220px;
     position: sticky;
     top: 70px;
     height: calc(100vh - 70px);
     overflow-y: auto;
-    min-width: 220px;
-    max-width: 300px;
-    padding-left: 1rem;
-    margin-top: 1rem;
-    order: 2; /* This ensures it stays on the right */
 }
 
-.post-toc #toc {
-    font-size: 0.875rem;
-}
-
+/* Mobile responsive styles */
 @media screen and (max-width: 820px) {
+    .post-content-wrapper {
+        flex-direction: column;
+    }
+    
     .post-toc {
         display: none;
     }
+
+    .sharebuttons {
+        font-size: 0.9rem;
+    }
+
+    .sharebuttons ul li a svg {
+        height: 1rem;
+        width: auto;
+    }
+
+    .sharebuttons .share-text {
+        font-size: 0.8rem;
+    }
 }
 
-/* Make sure the share buttons look good */
-.sharebuttons {
-    margin: 2rem 0;
-}
-
-.sharebuttons span {
+/* Share buttons responsive */
+.sharebuttons, .sharebuttons ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    color: #646464;
 }
 
-.sharebuttons .share-text {
-    font-size: 0.9rem;
-    margin-left: 0.25rem;
+.sharebuttons ul {
+    padding: 0;
+    margin: 0;
 }
 
-.sharebuttons svg {
-    margin-right: 0.25rem;
+.sharebuttons ul li {
+    margin: 0;
 }
