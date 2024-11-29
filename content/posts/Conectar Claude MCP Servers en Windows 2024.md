@@ -1,6 +1,6 @@
 ---
 created: 2024-11-14T02:00
-updated: 2024-11-29T05:35
+updated: 2024-11-29T07:21
 title: Conectar Claude MCP Servers en Windows 2024
 date: 2024-11-29T11:07:07+01:00
 draft: "false"
@@ -16,6 +16,7 @@ tags:
   - tutoriales
   - Español
   - Guias
+showTableOfContents: "true"
 ---
 
 ![](/images/Pasted%20image%2020241129053405.png)
@@ -114,4 +115,4 @@ recuerda tambien tener instalado node.js y agregarlo al PATH de tu maquina
 ```
 
 
-Creo que eso es todo, queria compartir algo y revivir el sitio. 
+Creo que eso es todo, quería compartir algo y revivir el sitio. 
