@@ -1,43 +1,27 @@
 /* TOC Styles */
-.post.container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
-
-.post-wrapper {
-    flex: 1;
-    max-width: 100%;
-}
-
 .post-toc {
-    display: none; /* Hide all TOCs by default */
-}
-
-/* Only show the TOC inside post-container and style it */
-.post.container > .post-toc {
-    display: block; /* Show only the main TOC */
     position: sticky;
     top: 70px;
-    width: 240px;
-    max-height: calc(100vh - 70px);
+    height: calc(100vh - 70px);
     overflow-y: auto;
-    margin-top: 1rem;
+    min-width: 220px;
+    max-width: 300px;
     padding-left: 1rem;
+    margin-top: 1rem;
+    order: 2; /* This ensures it stays on the right */
+}
+
+.post-toc #toc {
     font-size: 0.875rem;
 }
 
-.post-toc nav {
-    margin-top: 0;
-}
-
 @media screen and (max-width: 820px) {
-    .post.container {
-        flex-direction: column;
-    }
-    
-    .post.container > .post-toc {
+    .post-toc {
         display: none;
     }
+}
+
+/* Make sure the share buttons look good */
+.sharebuttons {
+    margin: 2rem 0;
 }
