@@ -1,47 +1,49 @@
 {{ define "main" }}
 {{ if eq .Type "post" }}
 <div class="post container">
-    <div class="post-header-section">
-        <h1>{{ .Title }}</h1>
-        {{ if .Params.Description }}
-        <span class="post-description">{{ .Description }}</span>
-        {{ end }}
+    <div class="post-content-wrapper" style="display: flex; gap: 2rem;">
+        <div class="main-content" style="flex: 1;">
+            <div class="post-header-section">
+                <h1>{{ .Title }}</h1>
+                {{ if .Params.Description }}
+                <span class="post-description">{{ .Description }}</span>
+                {{ end }}
+                <div class="post-date">
+                    {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Date }}
+                    {{ if lt .Date .Lastmod }}
+                    | Updated: {{ dateFormat .Site.Params.dateFormat .Lastmod }}
+                    {{ end }}
+                    | {{ partial "reading-time.html" . }}
+                </div>
+                {{ if .Params.tags }}
+                <ul class="post-tags">
+                    {{ range .Params.tags }}
+                    <li class="post-tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
 
-        <div class="post-date">
-            {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Date }}
-            {{ if lt .Date .Lastmod }}
-            | Updated: {{ dateFormat .Site.Params.dateFormat .Lastmod }}
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+
+            <!-- Add share buttons here -->
+            {{ partial "share-buttons.html" . }}
+
+            {{ if eq .Site.Params.ShowBackToTopButton "true" }}
+                <img id="btt-button" class="arrow-logo" src="{{ "images/up-arrow.svg" | relURL }}" onclick="scrollToTop()" title="Go to top" alt="arrow logo">
             {{ end }}
-            | {{ partial "reading-time.html" . }}
         </div>
 
-        {{ if .Params.tags }}
-        <ul class="post-tags">
-            {{ range .Params.tags }}
-            <li class="post-tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-            {{ end }}
-        </ul>
+        {{ if .Params.showTableOfContents }}
+        <div class="post-toc">
+            <div id="toc">
+                {{ .TableOfContents }}
+            </div>
+        </div>
         {{ end }}
     </div>
-
-    {{ if .Params.showTableOfContents }}
-    <div class="post-toc">
-        <div id="toc">
-            {{ .TableOfContents }}
-        </div>
-    </div>
-    {{ end }}
-
-    <div class="post-content">
-        {{ .Content }}
-    </div>
-
-    <!-- Add share buttons here -->
-    {{ partial "share-buttons.html" . }}
-
-    {{ if eq .Site.Params.ShowBackToTopButton "true" }}
-        <img id="btt-button" class="arrow-logo" src="{{ "images/up-arrow.svg" | relURL }}" onclick="scrollToTop()" title="Go to top" alt="arrow logo">
-    {{ end }}
 
     {{ if .Site.Params.CustomCommentHTML }}
         <div id="comments">
