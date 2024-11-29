@@ -1,36 +1,43 @@
-/* Table of Contents Positioning */
-.post {
+/* TOC Styles */
+.post.container {
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 2rem;
 }
 
-.post-content {
+.post-wrapper {
     flex: 1;
+    max-width: 100%;
 }
 
 .post-toc {
-    width: 220px;
+    display: none; /* Hide all TOCs by default */
+}
+
+/* Only show the TOC inside post-container and style it */
+.post.container > .post-toc {
+    display: block; /* Show only the main TOC */
     position: sticky;
     top: 70px;
+    width: 240px;
     max-height: calc(100vh - 70px);
     overflow-y: auto;
-    margin-top: 0;
-    padding: 0.5rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-size: 0.875rem;
 }
 
-/* Hide TOC on smaller screens */
-@media only screen and (max-width: 820px) {
-    .post {
+.post-toc nav {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 820px) {
+    .post.container {
         flex-direction: column;
     }
-    .post-toc {
+    
+    .post.container > .post-toc {
         display: none;
     }
-}
-
-/* Share buttons styling */
-.sharebuttons {
-    margin-top: 2rem;
 }
