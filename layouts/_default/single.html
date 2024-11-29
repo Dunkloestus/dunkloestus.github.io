@@ -1,8 +1,8 @@
 {{ define "main" }}
 {{ if eq .Type "post" }}
 <div class="post container">
-    <div style="display: flex; gap: 2rem;">
-        <div style="flex: 1;">
+    <div class="post-content-wrapper">
+        <div class="post-main">
             <div class="post-header-section">
                 <h1>{{ .Title }}</h1>
                 <small role="doc-subtitle">{{ .Description }}</small>
@@ -33,7 +33,7 @@
         </div>
 
         {{ if .Params.showTableOfContents }}
-        <div class="post-toc" style="order: 2;">
+        <div class="post-toc">
             <div id="toc">
                 {{ .TableOfContents }}
             </div>
