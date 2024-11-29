@@ -1,0 +1,8 @@
+<span class="reading-time">
+    {{ $readTime := .ReadingTime }}
+    {{ if eq $readTime 1 }}
+        {{ $readTime }} minute read
+    {{ else }}
+        {{ $readTime }} minutes read
+    {{ end }}
+</span>
