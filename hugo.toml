@@ -9,6 +9,13 @@ theme = "gokarna"
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false
+
+
 [menu]
   [[menu.main]]
     # Unique identifier for a menu item
