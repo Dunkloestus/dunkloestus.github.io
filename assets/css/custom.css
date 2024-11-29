@@ -1,31 +1,36 @@
-.reading-time {
-    color: gray;
-    font-size: 0.9em;
-}
-
-.flex-wrapper {
+/* Table of Contents Positioning */
+.post {
+    position: relative;
     display: flex;
+    flex-direction: row;
     gap: 2rem;
 }
 
-.flex-wrapper .post-content {
+.post-content {
     flex: 1;
 }
 
 .post-toc {
+    width: 220px;
     position: sticky;
     top: 70px;
-    height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
     overflow-y: auto;
-    min-width: 220px;
-    max-width: 300px;
+    margin-top: 0;
+    padding: 0.5rem;
 }
 
+/* Hide TOC on smaller screens */
 @media only screen and (max-width: 820px) {
-    .flex-wrapper {
+    .post {
         flex-direction: column;
     }
     .post-toc {
         display: none;
     }
+}
+
+/* Share buttons styling */
+.sharebuttons {
+    margin-top: 2rem;
 }
