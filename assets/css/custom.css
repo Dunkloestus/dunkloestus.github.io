@@ -1,31 +1,60 @@
-/* Layout structure */
+/* Base layout */
+.post.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
 .post-content-wrapper {
     display: flex;
     gap: 2rem;
+    flex-direction: row-reverse; /* This is key - puts TOC on right */
+}
+
+/* Main content area */
+.post-main {
+    flex: 1;
+    min-width: 0; /* Prevents content overflow */
     max-width: 100%;
 }
 
-.post-main {
-    flex: 1;
-    min-width: 0; /* This prevents flex items from overflowing */
-}
-
+/* Table of Contents styling */
 .post-toc {
-    width: 220px;
+    width: 240px;
+    flex-shrink: 0; /* Prevents TOC from shrinking */
     position: sticky;
     top: 70px;
     height: calc(100vh - 70px);
     overflow-y: auto;
+    padding-left: 1rem;
+    align-self: flex-start;
 }
 
-/* Mobile responsive styles */
+/* Share buttons styling */
+.sharebuttons {
+    margin-top: 2rem;
+}
+
+.sharebuttons, .sharebuttons ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sharebuttons span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mobile styles */
 @media screen and (max-width: 820px) {
     .post-content-wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on mobile */
     }
     
     .post-toc {
-        display: none;
+        display: none; /* Hide TOC on mobile */
     }
 
     .sharebuttons {
@@ -40,21 +69,4 @@
     .sharebuttons .share-text {
         font-size: 0.8rem;
     }
-}
-
-/* Share buttons responsive */
-.sharebuttons, .sharebuttons ul {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.sharebuttons ul {
-    padding: 0;
-    margin: 0;
-}
-
-.sharebuttons ul li {
-    margin: 0;
 }
