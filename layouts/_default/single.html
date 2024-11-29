@@ -1,6 +1,44 @@
 {{ define "main" }}
 {{ if eq .Type "post" }}
 <div class="post container">
+    {{ if .Params.showTableOfContents }}
+    <!-- Wrap both content and TOC in a flex container -->
+    <div style="display: flex; gap: 2rem;">
+        <!-- Main content -->
+        <div style="flex: 1;">
+            <div class="post-header-section">
+                <h1>{{ .Title }}</h1>
+                {{ if .Params.Description }}
+                <span class="post-description">{{ .Description }}</span>
+                {{ end }}
+                <div class="post-date">
+                    {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Date }}
+                    {{ if lt .Date .Lastmod }}
+                    | Updated: {{ dateFormat .Site.Params.dateFormat .Lastmod }}
+                    {{ end }}
+                    | {{ partial "reading-time.html" . }}
+                </div>
+                {{ if .Params.tags }}
+                <ul class="post-tags">
+                    {{ range .Params.tags }}
+                    <li class="post-tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+        </div>
+        <!-- Table of Contents -->
+        <div class="post-toc">
+            <div id="toc">
+                {{ .TableOfContents }}
+            </div>
+        </div>
+    </div>
+    {{ else }}
+    <!-- If no TOC, just show content normally -->
     <div class="post-header-section">
         <h1>{{ .Title }}</h1>
         {{ if .Params.Description }}
@@ -21,27 +59,19 @@
         </ul>
         {{ end }}
     </div>
-
-    {{ if .Params.showTableOfContents }}
-    <div class="post-toc">
-        <div id="toc">
-            {{ .TableOfContents }}
-        </div>
-    </div>
-    {{ end }}
-
     <div class="post-content">
         {{ .Content }}
     </div>
+    {{ end }}
 
     {{ if eq .Site.Params.ShowBackToTopButton "true" }}
-        <img id="btt-button" class="arrow-logo" src="{{ "images/up-arrow.svg" | relURL }}" onclick="scrollToTop()" title="Go to top" alt="arrow logo">
+    <img id="btt-button" class="arrow-logo" src="{{ "images/up-arrow.svg" | relURL }}" onclick="scrollToTop()" title="Go to top" alt="arrow logo">
     {{ end }}
 
     {{ if .Site.Params.CustomCommentHTML }}
-        <div id="comments">
-            {{ .Site.Params.CustomCommentHTML | safeHTML }}
-        </div>
+    <div id="comments">
+        {{ .Site.Params.CustomCommentHTML | safeHTML }}
+    </div>
     {{ end }}
 </div>
 {{ end }}
