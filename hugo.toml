@@ -76,8 +76,8 @@ enableRobotsTXT = true
   customHeadHTML = ""
 
   # Keywords relevant for SEO
-  metaKeywords = ["blog", "gokarna", "hugo"]
-
+  metaKeywords = ["blog", "gokarna", "hugo" , "Python" , "Claude", "IA"]
+  customCSS = ["css/custom.css"]
   # If you want to display posts on the homepage, the options are
   # "popular" (order posts by weight), "recent" (order posts by date)
   # or "" (do not display, default option)
