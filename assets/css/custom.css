@@ -25,3 +25,19 @@
 .sharebuttons {
     margin: 2rem 0;
 }
+
+.sharebuttons span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #646464;
+}
+
+.sharebuttons .share-text {
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+}
+
+.sharebuttons svg {
+    margin-right: 0.25rem;
+}
