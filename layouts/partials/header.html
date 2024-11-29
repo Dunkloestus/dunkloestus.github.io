@@ -1,0 +1,48 @@
+<header class="header">
+    <nav class="header-nav">
+        {{ if isset .Site.Params "avatarurl" }}
+        <div class="avatar">
+            <a href="{{ .Site.BaseURL }}">
+                <img src="{{ .Site.Params.AvatarURL }}" alt="{{ .Site.Params.AvatarAltText }}" />
+            </a>
+        </div>
+        {{ end }}
+        <div class="nav-title">
+            <a class="nav-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        </div>
+
+        <div class="nav-links">
+            <!-- Add search here -->
+            <div class="nav-search">
+                {{ partial "search-google.html" . }}
+            </div>
+            <!-- Original menu items -->
+            {{ range .Site.Menus.main }}
+            <div class="nav-link">
+                <a href="{{ .URL | absURL }}" {{ if .Params.newPage }}target="_blank"{{ end }}>
+                    {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                </a>
+            </div>
+            {{ end }}
+
+            <span class="nav-icons-divider"></span>
+
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            {{- $url := printf "%s" .RelPermalink -}}
+            {{ if not .Site.Params.DisableSearch }}
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </nav>
+</header>
