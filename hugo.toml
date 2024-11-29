@@ -18,6 +18,12 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+  pre = "<span data-feather='home'></span>"
+  [[menu.main]]
     # Unique identifier for a menu item
     identifier = "posts"
 
