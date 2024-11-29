@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ if eq .Type "post" }}
+<div class="post container">
+    <div class="post-header-section">
+        <h1>{{ .Title }}</h1>
+        {{ if .Params.Description }}
+        <span class="post-description">{{ .Description }}</span>
+        {{ end }}
+        <div class="post-date">
+            {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Date }}
+            {{ if lt .Date .Lastmod }}
+            | Updated: {{ dateFormat .Site.Params.dateFormat .Lastmod }}
+            {{ end }}
+            | {{ partial "reading-time.html" . }}
+        </div>
+        {{ if .Params.tags }}
+        <ul class="post-tags">
+            {{ range .Params.tags }}
+            <li class="post-tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+
+    {{ if .Params.showTableOfContents }}
+    <div class="post-toc">
+        <div id="toc">
+            {{ .TableOfContents }}
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    {{ if eq .Site.Params.ShowBackToTopButton "true" }}
+        <img id="btt-button" class="arrow-logo" src="{{ "images/up-arrow.svg" | relURL }}" onclick="scrollToTop()" title="Go to top" alt="arrow logo">
+    {{ end }}
+
+    {{ if .Site.Params.CustomCommentHTML }}
+        <div id="comments">
+            {{ .Site.Params.CustomCommentHTML | safeHTML }}
+        </div>
+    {{ end }}
+</div>
+{{ end }}
+{{ if eq .Type "page" }}
+{{ partial "page.html" . }}
+{{ end }}
+{{ end }}
