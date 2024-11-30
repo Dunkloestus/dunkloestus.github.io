@@ -1,6 +1,6 @@
 ---
 created: 2024-08-29T23:35
-updated: 2024-11-30T05:56
+updated: 2024-11-30T05:58
 title: IA INDEX AI
 date: 2024-08-29T11:46:07+01:00
 draft: "false"
@@ -14,7 +14,7 @@ tags:
 image: /images/Pasted%20image%2020240829233730.png
 ---
 
-# Index
+# Index 
 
 Una de las cosas que mas me preguntan es "Que tipo de I.A puedo utilizar para . . ." así que decidí que seria conveniente tener un index donde pueda compartir rápidamente modelos y porque me gustan o sus usos:
 
@@ -24,7 +24,7 @@ Una de las cosas que mas me preguntan es "Que tipo de I.A puedo utilizar para . 
 ## NEW KID IN TOWN Y MI FAVORITA
 
 # Claude
-![](images/Pasted%20image%2020241130055423.png)
+![](/images/Pasted%20image%2020241130055423.png)
 
 Sus modelos, el soporte para capturas, buena redacción (en ingles) y es excelente programando, tiene un limite de usos gratuito pero es excelente modelo.
 
@@ -80,3 +80,5 @@ https://groq.com
 ![huggin face](/images/Pasted%20image%2020240829234454.png)
 
 https://huggingface.co/spaces
+
+/envolo
